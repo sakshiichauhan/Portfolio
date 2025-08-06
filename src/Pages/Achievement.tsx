@@ -63,7 +63,7 @@ const AchievementsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-black">
+    <section className="pt-35 pb-20 bg-[#212020]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-[#FFFFFF]">
@@ -79,7 +79,7 @@ const AchievementsSection = () => {
           {achievements.map((achievement, index) => (
             <Card 
               key={index}
-              className="group bg-black/50 backdrop-blur-sm border-white/20 hover:shadow-elevated hover:scale-105 transition-all duration-500 text-center"
+              className="group bg-[#212020]/50 backdrop-blur-sm border-white/20 hover:shadow-elevated hover:scale-105 transition-all duration-500 text-center"
             >
               <CardContent className="p-8">
                 <div className="inline-flex p-4 rounded-full bg-[#A3E635]/10 text-[#A3E635] mb-6 group-hover:shadow-glow-primary transition-all duration-300">
@@ -108,7 +108,7 @@ const AchievementsSection = () => {
             {additionalInfo.map((info, index) => (
               <Card 
                 key={index}
-                className="bg-black/30 backdrop-blur-sm border-white/20 hover:bg-black/50 transition-all duration-300"
+                className="bg-[#212020]/30 backdrop-blur-sm border-white/20 hover:bg-[#212020]/50 transition-all duration-300"
               >
                 <CardContent className="p-6 text-center">
                   <h4 className="text-lg font-semibold text-white mb-3">{info.title}</h4>

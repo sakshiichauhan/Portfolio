@@ -43,7 +43,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-black relative overflow-hidden">
+    <section className="pt-35 pb-20 bg-[#212020] relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-64 h-64 bg-[#A3E635]/30 rounded-full blur-3xl"></div>
@@ -66,7 +66,7 @@ const ContactSection = () => {
             {contactInfo.map((contact, index) => (
               <Card 
                 key={index}
-                className="group bg-black/50 backdrop-blur-sm border-white/20 hover:shadow-elevated hover:scale-105 transition-all duration-300"
+                className="group bg-[#212020]/50 backdrop-blur-sm border-white/20 hover:shadow-elevated hover:scale-105 transition-all duration-300"
               >
                 <CardContent className="p-6 text-center">
                   <div className="inline-flex p-4 rounded-full bg-[#A3E635]/10 text-[#A3E635] mb-4 group-hover:shadow-glow-primary transition-all duration-300">
@@ -76,12 +76,12 @@ const ContactSection = () => {
                   {contact.href !== "#" ? (
                     <a 
                       href={contact.href}
-                      className="text-white/70 hover:text-[#A3E635] transition-colors"
+                       className="text-white/70 hover:text-[#A3E635] transition-colors break-words text-lg leading-relaxed " 
                     >
                       {contact.value}
                     </a>
                   ) : (
-                    <p className="text-white/70">{contact.value}</p>
+                    <p className="text-white/70 break-words text-lg leading-relaxed">{contact.value}</p>
                   )}
                 </CardContent>
               </Card>
@@ -89,7 +89,7 @@ const ContactSection = () => {
           </div>
 
           {/* CTA Section */}
-          <Card className="bg-black/50 border-white/20 backdrop-blur-sm">
+          <Card className="bg-[#212020]/50 border-white/20 backdrop-blur-sm">
             <CardContent className="p-8 text-center">
               <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-white">
                 Ready to work together?
@@ -141,7 +141,7 @@ const ContactSection = () => {
           </div>
 
           {/* Education Section */}
-          <Card className="mt-12 bg-black/30 backdrop-blur-sm border-white/20">
+          <Card className="mt-12 bg-[#212020]/30 backdrop-blur-sm border-white/20">
             <CardContent className="p-8 text-center">
               <h3 className="text-xl font-bold mb-4 text-white">Education</h3>
               <div className="space-y-2">

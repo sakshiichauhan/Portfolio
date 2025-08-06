@@ -54,7 +54,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-black">
+    <section className="pt-35 pb-20 bg-[#212020]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-[#FFFFFF]">
@@ -70,7 +70,7 @@ const SkillsSection = () => {
           {skillCategories.map((category, index) => (
             <Card 
               key={index} 
-              className="bg-black/50 backdrop-blur-sm border-white/20 hover:shadow-elevated transition-all duration-300"
+              className="bg-[#212020]/50 backdrop-blur-sm border-white/20 hover:shadow-elevated transition-all duration-300" 
             >
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-3 text-xl text-white">
@@ -86,7 +86,7 @@ const SkillsSection = () => {
                     <Badge 
                       key={skillIndex}
                       variant="outline"
-                      className="bg-white/10 border-white/20 hover:bg-[#A3E635]/10 hover:border-[#A3E635]/30 transition-colors text-white"
+                      className="bg-[#212020]/10 border-white/20 hover:bg-[#A3E635]/10 hover:border-[#A3E635]/30 transition-colors text-[#FFFFFF]"
                     >
                       {skill}
                     </Badge>
@@ -106,11 +106,11 @@ const SkillsSection = () => {
             {certifications.map((cert, index) => (
               <Card 
                 key={index}
-                className="bg-black/30 backdrop-blur-sm border-white/20 hover:bg-black/50 transition-all duration-300"
+                className="bg-[#212020]/30 backdrop-blur-sm border-white/20 hover:bg-[#212020]/50 transition-all duration-300"
               >
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-lg bg-[#A3E635]/10 text-[#A3E635]">
+                    <div className="p-2 rounded-lg bg-[#A3E635]/10 text-[#A3E635]"> 
                       {cert.icon}
                     </div>
                     <div>

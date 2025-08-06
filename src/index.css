@@ -1,6 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @layer base {
+  * {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Global No Bounce Effects */
+  html, body {
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: auto;
+    scroll-behavior: auto;
+    touch-action: pan-x pan-y;
+    overflow-x: hidden;
+  }
+  
+  /* Prevent bounce on all scrollable elements */
+  * {
+    overscroll-behavior: none;
+  }
+  
+  /* Specific handling for mobile devices */
+  @media (max-width: 768px) {
+    html, body {
+      overscroll-behavior: none;
+      -webkit-overflow-scrolling: auto;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+    }
+    
+    #root {
+      height: 100%;
+      overflow-y: auto;
+      overscroll-behavior: none;
+      -webkit-overflow-scrolling: auto;
+    }
+  }
+  
   :root {
     /* Custom color scheme with white, #A3E635, and black */
     --background: 0 0% 0%;

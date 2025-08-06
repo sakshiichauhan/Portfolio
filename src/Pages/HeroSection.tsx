@@ -1,11 +1,36 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
-// import profileImage from "@/assets/profile-hero.jpg";
+import { Github, Linkedin, Mail, MapPin, Phone, Instagram, Download, ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import profileImage from "@/assets/Sakshi.jpg";
+
+const TypewriterText = ({ text, speed = 100 }: { text: string; speed?: number }) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timer = setTimeout(() => {
+        setDisplayText(prev => prev + text[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, speed);
+
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex, text, speed]);
+
+  return (
+    <span className="text-[#A3E635]">
+      {displayText}
+     
+    </span>
+  );
+};
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-[#212020] overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-20 w-72 h-72 bg-[#A3E635]/30 rounded-full blur-3xl"></div>
@@ -22,63 +47,77 @@ const HeroSection = () => {
                 Available for Opportunities
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="text-white">SAKSHI</span>
-                <br />
-                <span className="text-[#A3E635]">
-                  CHAUHAN
-                </span>
+                <TypewriterText text="Hello, I'm SAKSHI" speed={150} />
               </h1>
-              <div className="text-xl lg:text-2xl text-white/70 font-medium">
-                Software Developer | Full-Stack Web Development
+              <div className="text-xl lg:text-2xl text-[#FFFFFF] font-medium">
+                Junior Software Developer | Full-Stack Web Development
               </div>
             </div>
 
-            <p className="text-lg text-white/80 leading-relaxed max-w-2xl">
-              Results-driven Software Developer with expertise in React.js, Node.js, and full-stack development. 
-              Proven track record of delivering high-performance web applications with 30%+ improvement in user engagement.
+            <p className="text-lg text-[#FFFFFF] leading-relaxed max-w-2xl">
+            Results-driven Software Developer skilled in React.js, Node.js & full-stack web development. Expert at building high-performance apps, optimizing user engagement, and leading projects from concept to delivery with a focus on intuitive UX and scalability.
             </p>
 
             {/* Contact Info */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-              <div className="flex items-center gap-2 text-white/70">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
+              <div className="flex items-center gap-2 text-[#FFFFFF]"> 
                 <Mail className="w-4 h-4 text-[#A3E635]" />
                 chauhan.sakshi2002@gmail.com
               </div>
-              <div className="flex items-center gap-2 text-white/70">
+              <div className="flex items-center gap-2 text-[#FFFFFF]">
                 <Phone className="w-4 h-4 text-[#A3E635]" />
                 +91 8178359271
               </div>
-              <div className="flex items-center gap-2 text-white/70">
+              <div className="flex items-center gap-2 text-[#FFFFFF]">
                 <MapPin className="w-4 h-4 text-[#A3E635]" />
                 Noida, India
               </div>
             </div>
 
-            {/* CTA Buttons */}
+            {/* Enhanced CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <Button 
-                size="lg" 
-                className="bg-[#A3E635] text-black hover:bg-[#A3E635]/90 transition-all duration-300"
-              >
-                <Mail className="w-4 h-4 mr-2" />
-                Get In Touch
-              </Button>
+              <Link to="/contact">
+                <Button 
+                  size="lg" 
+                  className="bg-[#A3E635] text-black  hover:bg-[#ffffff] hover:border-[#A3E635] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 group font-semibold px-8 py-3 rounded-xl"
+                >
+                  <Mail className="w-4 h-4 mr-2 group-hover:animate-pulse" />
+                  Get In Touch
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-[#A3E635]/30 text-white hover:bg-[#A3E635]/10 hover:border-[#A3E635] transition-all duration-300"
+                className="border-2 border-[#A3E635]/30 text-white hover:bg-[#A3E635]/10 hover:border-[#A3E635] transition-all duration-300 backdrop-blur-sm hover:scale-105 group font-semibold px-8 py-3 rounded-xl"
               >
+                <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
                 Download Resume
               </Button>
             </div>
 
-            {/* Social Links */}
+            {/* Enhanced Social Links */}
             <div className="flex gap-4">
-              <Button variant="ghost" size="icon" className="hover:bg-[#A3E635]/10 hover:text-[#A3E635] text-white transition-colors">
-                <Github className="w-5 h-5" />
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="hover:bg-[#A3E635]/10 hover:text-[#A3E635] text-[#FFFFFF] border-2 border-[#FFFFFF] transition-all duration-300 hover:scale-110 group p-3 rounded-xl"
+              >
+                <Github className="w-7 h-7 group-hover:animate-pulse" />
               </Button>
-              <Button variant="ghost" size="icon" className="hover:bg-[#A3E635]/10 hover:text-[#A3E635] text-white transition-colors">
-                <Linkedin className="w-5 h-5" />
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="hover:bg-[#A3E635]/10 hover:text-[#A3E635] border-2 border-[#FFFFFF] text-[#FFFFFF] transition-all duration-300 hover:scale-110 group p-3 rounded-xl"
+              >
+                <Linkedin className="w-5 h-5 group-hover:animate-pulse" />
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="hover:bg-[#A3E635]/10 hover:text-[#A3E635] border-2 border-[#FFFFFF] text-[#FFFFFF] transition-all duration-300 hover:scale-110 group p-3 rounded-xl"
+              >
+                <Instagram className="w-5 h-5 group-hover:animate-pulse" />
               </Button>
             </div>
           </div>
@@ -88,8 +127,12 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-[#A3E635] rounded-full blur-2xl opacity-30 scale-110"></div>
               <div className="relative w-80 h-80 lg:w-96 lg:h-96">
-                <div className="w-full h-full bg-[#A3E635] rounded-full border-4 border-[#A3E635]/30 shadow-elevated flex items-center justify-center">
-                  <div className="text-6xl font-bold text-black">SC</div>
+                <div className="w-full h-full bg-[#A3E635] rounded-full border-4 border-[#A3E635]/30 shadow-elevated overflow-hidden">
+                  <img 
+                    src={profileImage} 
+                    alt="Sakshi Chauhan" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               
