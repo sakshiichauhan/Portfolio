@@ -7,12 +7,12 @@ import Navigation from "@/Pages/Navigation";
 import HeroSection from "@/Pages/HeroSection";
 import ExperienceSection from "@/Pages/Experience";
 import ProjectsSection from "@/Pages/ProjectSection";
-
+import About from "@/Pages/About";
 import AdminDashboard from "@/Pages/Projects/AdminDashboard";
 import Aimshala from "@/Pages/Projects/Aimshala";
 import BondOverSports from "@/Pages/Projects/BondOverSports";
 import SkillsSection from "@/Pages/SkillSection";
-import AchievementsSection from "@/Pages/Achievement";
+
 import ContactSection from "@/Pages/ContactSerction";
 import NotFound from "@/Pages/NotFound";
 
@@ -30,12 +30,12 @@ const App = () => (
             <Route path="/" element={<HeroSection />} />
             <Route path="/experience" element={<ExperienceSection />} />
             <Route path="/projects" element={<ProjectsSection />} />
-           
+           <Route path="/about" element={<About/>}/>
             <Route path="/project/admin-dashboard" element={<AdminDashboard />} />
             <Route path="/project/aimshala" element={<Aimshala />} />
             <Route path="/project/bond-over-sports" element={<BondOverSports />} />
-            <Route path="/skills" element={<SkillsSection />} />
-            <Route path="/achievements" element={<AchievementsSection />} />
+            <Route path="/services" element={<SkillsSection />} />
+
             <Route path="/contact" element={<ContactSection />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

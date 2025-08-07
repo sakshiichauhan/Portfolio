@@ -3,7 +3,9 @@ import { Badge } from "@/components/ui/badge";
 
 // Import images
 import bondOverSportsImage1 from "@/assets/BondOverSports/image1.jpeg";
-import bondOverSportsImage2 from "@/assets/BondOverSports/image2.jpeg";
+import AdminDashboard from "@/assets/AdminDashboard/image1.jpeg";
+import Aimshala from "@/assets/Aimshala/image1.jpeg";
+
 
 // Project Image Component
 const ProjectImage = ({ imagePath, title }: { imagePath: string; title: string }) => (
@@ -20,7 +22,7 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "Bond Over Sports (BOS)",
-      description: "Government-recognized platform officially registered under FIT India initiative and acknowledged by NITI Aayog",
+      description: "I build Bond Over Sports, a platform connecting communities through heritage sports using frontend and API-driven design",
       tech: ["React.js", "TypeScript", "Vite", "Tailwind CSS", "Axios"],
       image: bondOverSportsImage1,
       pagePath: "/project/bond-over-sports"
@@ -29,14 +31,14 @@ const ProjectsSection = () => {
       title: "Admin Dashboard",
       description: "Built a dynamic and responsive Admin Dashboard using React TypeScript, Tailwind CSS, and ShadCN UI to manage platform data efficiently.",
       tech: ["React Ts", "Tailwindcss", "ShadCN UI"],
-      image: bondOverSportsImage1,
+      image: AdminDashboard,
       pagePath: "/project/admin-dashboard"
     },
     {
       title: "Aimshala - Consultant Management Platform", 
       description: "Comprehensive consultant management platform with dashboard, profile management, and session scheduling",
       tech: ["React.js", "TypeScript", "Redux Toolkit", "Tailwind CSS", "Clerk"],
-      image: bondOverSportsImage2,
+      image: Aimshala,
       pagePath: "/project/aimshala"
     },
   

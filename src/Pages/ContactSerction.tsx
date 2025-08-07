@@ -1,30 +1,34 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Github, Linkedin, Download } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin,Instagram } from "lucide-react";
 import { motion } from "framer-motion";
+import bgImage from "@/assets/bg.jpg";
 
 const ContactSection = () => {
   const contactInfo = [
     {
-      icon: <Mail className="w-6 h-6" />,
-      label: "Email",
-      value: "chauhan.sakshi2002@gmail.com",
-      href: "mailto:chauhan.sakshi2002@gmail.com",
+      icon: <MapPin className="w-6 h-6" />,
+      label: "ADDRESS",
+      value: "Noida, India",
       color: "primary"
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      label: "Phone",
+      label: "CONTACT NUMBER",
       value: "+91 8178359271",
-      href: "tel:+918178359271",
       color: "secondary"
     },
     {
-      icon: <MapPin className="w-6 h-6" />,
-      label: "Location",
-      value: "Noida, India",
-      href: "#",
+      icon: <Mail className="w-6 h-6" />,
+      label: "EMAIL ADDRESS",
+      value: "chauhan.sakshi2002@gmail.com",
       color: "accent"
+    },
+    {
+      icon: <Linkedin className="w-6 h-6" />,
+      label: "LinkedIn",
+      value: "https://www.linkedin.com/in/sakshi-chauhan-022862229/",
+      color: "primary"
     }
   ];
 
@@ -38,13 +42,30 @@ const ContactSection = () => {
     {
       icon: <Linkedin className="w-6 h-6" />,
       label: "LinkedIn", 
-      href: "https://linkedin.com/in/sakshi-chauhan",
+      href: "https://www.linkedin.com/in/sakshi-chauhan-022862229/",
+      color: "secondary"
+    },
+     {
+      icon: <Instagram className="w-6 h-6" />,
+      label: "Instagram",
+      href: "https://www.instagram.com/chauhan.sakshi2002/",
       color: "secondary"
     }
   ];
 
   return (
-    <section className="pt-35 pb-20 bg-[#212020] relative overflow-hidden">
+    <section 
+      className="pt-35 pb-20 relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-[#212020]/80"></div>
       {/* Background decorative elements */}
       <motion.div 
         className="absolute inset-0 opacity-10"
@@ -78,43 +99,53 @@ const ContactSection = () => {
         ></motion.div>
       </motion.div>
 
-      <div className="container relative z-10 mx-auto px-6">
+      <div className="container relative z-20 mx-auto px-6">
         <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.h2 
-            className="text-4xl lg:text-5xl font-bold mb-4 text-[#FFFFFF]"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          > 
-            Let's <span className="text-[#A3E635]">Connect</span>
-          </motion.h2>
+          <motion.div className="relative mb-4">
+            <motion.h2 
+              className="text-4xl lg:text-8xl font-bold text-white/5 absolute inset-0 flex items-center justify-center mt-20"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Let's Connect
+            </motion.h2>
+            <motion.h2 
+              className="text-4xl lg:text-7xl font-bold text-white relative z-10"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              Let's Connect
+            </motion.h2>
+          </motion.div>
           <motion.p 
-            className="text-lg text-white/80 max-w-2xl mx-auto"
+            className="text-lg text-white/80 max-w-2xl mx-auto mt-5"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
           >
-            Ready to collaborate on exciting projects or discuss opportunities? I'd love to hear from you.
+            Below are the details to reach out to me!
           </motion.p>
         </motion.div>
 
         <motion.div 
-          className="max-w-4xl mx-auto"
+          className="max-w-6xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
         >
-          {/* Contact Information */}
+          {/* Contact Information Cards */}
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
           >
             {contactInfo.map((contact, index) => (
               <motion.div
@@ -123,7 +154,7 @@ const ContactSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ 
                   duration: 0.6, 
-                  delay: 1.0 + index * 0.2,
+                  delay: 1.2 + index * 0.2,
                   ease: "easeOut"
                 }}
                 whileHover={{ 
@@ -132,99 +163,26 @@ const ContactSection = () => {
                 }}
               >
                 <Card 
-                  className="group bg-[#212020]/50 backdrop-blur-sm border-white/20 hover:shadow-elevated hover:scale-105 transition-all duration-300"
+                  className="group bg-[#212020]/50 backdrop-blur-sm border-white/20 hover:shadow-elevated hover:scale-105 transition-all duration-300 h-full"
                 >
-                  <CardContent className="p-6 text-center">
+                  <CardContent className="p-6 text-center flex flex-col items-center justify-center h-full">
                     <motion.div 
-                      className="inline-flex p-4 rounded-full bg-[#A3E635]/10 text-[#A3E635] mb-4 group-hover:shadow-glow-primary transition-all duration-300"
+                      className="inline-flex p-4 rounded-full bg-[#A3E635] text-black mb-4 group-hover:shadow-glow-primary transition-all duration-300"
                       whileHover={{ rotate: 10, scale: 1.1 }}
                       transition={{ duration: 0.2 }}
                     >
                       {contact.icon}
                     </motion.div>
-                    <h3 className="text-lg font-semibold text-white mb-2">{contact.label}</h3>
-                    {contact.href !== "#" ? (
-                      <a 
-                        href={contact.href}
-                         className="text-white/70 hover:text-[#A3E635] transition-colors break-words text-lg leading-relaxed " 
-                      >
-                        {contact.value}
-                      </a>
-                    ) : (
-                      <p className="text-white/70 break-words text-lg leading-relaxed">{contact.value}</p>
-                    )}
+                    <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wide">{contact.label}</h3>
+                    <p className="text-white/70 text-sm leading-relaxed">{contact.value}</p>
                   </CardContent>
                 </Card>
               </motion.div>
             ))}
           </motion.div>
 
-          {/* CTA Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.8 }}
-          >
-            <Card className="bg-[#212020]/50 border-white/20 backdrop-blur-sm">
-              <CardContent className="p-8 text-center">
-                <motion.h3 
-                  className="text-2xl lg:text-3xl font-bold mb-4 text-white"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 2.0 }}
-                >
-                  Ready to work together?
-                </motion.h3>
-                <motion.p 
-                  className="text-lg text-white/80 mb-8 max-w-2xl mx-auto"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 2.2 }}
-                >
-                  I'm currently available for full-time opportunities and exciting projects. 
-                  Let's discuss how we can create something amazing together.
-                </motion.p>
-                
-                <motion.div 
-                  className="flex flex-col sm:flex-row gap-4 justify-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 2.4 }}
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Button 
-                      size="lg"
-                      className="bg-[#A3E635] text-black hover:bg-[#A3E635]/90 transition-all duration-300"
-                      asChild
-                    >
-                      <a href="mailto:chauhan.sakshi2002@gmail.com">
-                        <Mail className="w-5 h-5 mr-2" />
-                        Get In Touch
-                      </a>
-                    </Button>
-                  </motion.div>
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Button 
-                      variant="outline"
-                      size="lg"
-                      className="border-[#A3E635]/30 text-white hover:bg-[#A3E635]/10 hover:border-[#A3E635] transition-all duration-300"
-                    >
-                      <Download className="w-5 h-5 mr-2" />
-                      Download Resume
-                    </Button>
-                  </motion.div>
-                </motion.div>
-              </CardContent>
-            </Card>
-          </motion.div>
+          {/* Have a Question Section */}
+       
 
           {/* Social Links */}
           <motion.div 

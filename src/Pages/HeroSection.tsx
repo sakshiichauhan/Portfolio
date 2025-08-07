@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import profileImage from "@/assets/Sakshi.jpg";
 
+
 const TypewriterText = ({ text, speed = 100 }: { text: string; speed?: number }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -79,46 +80,70 @@ const HeroSection = () => {
               <Link to="/contact">
                 <Button 
                   size="lg" 
-                  className="bg-[#A3E635] text-black  hover:bg-[#ffffff] hover:border-[#A3E635] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 group font-semibold px-8 py-3 rounded-xl"
+                  className="bg-[#A3E635] text-black hover:bg-[#ffffff] hover:border-[#A3E635] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 group font-semibold px-8 py-3 rounded-xl"
                 >
                   <Mail className="w-4 h-4 mr-2 group-hover:animate-pulse" />
                   Get In Touch
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-2 border-[#A3E635]/30 text-white hover:bg-[#A3E635]/10 hover:border-[#A3E635] transition-all duration-300 backdrop-blur-sm hover:scale-105 group font-semibold px-8 py-3 rounded-xl"
+              <a 
+                href="/Sakshi_Resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
               >
-                <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
-                Download Resume
-              </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="border-2 border-[#A3E635]/30 text-white hover:bg-[#A3E635]/10 hover:border-[#A3E635] transition-all duration-300 backdrop-blur-sm hover:scale-105 group font-semibold px-8 py-3 rounded-xl"
+                >
+                  <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
+                  Download CV
+                </Button>
+              </a>
             </div>
 
             {/* Enhanced Social Links */}
             <div className="flex gap-4">
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                className="hover:bg-[#A3E635]/10 hover:text-[#A3E635] text-[#FFFFFF] border-2 border-[#FFFFFF] transition-all duration-300 hover:scale-110 group p-3 rounded-xl"
+              <a 
+                href="https://github.com/sakshiichauhan" 
+                target="_blank" 
+                rel="noopener noreferrer"
               >
-                <Github className="w-7 h-7 group-hover:animate-pulse" />
-              </Button>
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                className="hover:bg-[#A3E635]/10 hover:text-[#A3E635] border-2 border-[#FFFFFF] text-[#FFFFFF] transition-all duration-300 hover:scale-110 group p-3 rounded-xl"
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="hover:bg-[#A3E635]/10 hover:text-[#A3E635] text-[#FFFFFF] border-2 border-[#FFFFFF] transition-all duration-300 hover:scale-110 group p-3 rounded-xl"
+                >
+                  <Github className="w-7 h-7 group-hover:animate-pulse" />
+                </Button>
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/sakshi-chauhan-022862229/" 
+                target="_blank" 
+                rel="noopener noreferrer"
               >
-                <Linkedin className="w-5 h-5 group-hover:animate-pulse" />
-              </Button>
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                className="hover:bg-[#A3E635]/10 hover:text-[#A3E635] border-2 border-[#FFFFFF] text-[#FFFFFF] transition-all duration-300 hover:scale-110 group p-3 rounded-xl"
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="hover:bg-[#A3E635]/10 hover:text-[#A3E635] border-2 border-[#FFFFFF] text-[#FFFFFF] transition-all duration-300 hover:scale-110 group p-3 rounded-xl"
+                >
+                  <Linkedin className="w-5 h-5 group-hover:animate-pulse" />
+                </Button>
+              </a>
+              <a 
+                href="https://www.instagram.com/chauhan.sakshi2002/" 
+                target="_blank" 
+                rel="noopener noreferrer"
               >
-                <Instagram className="w-5 h-5 group-hover:animate-pulse" />
-              </Button>
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="hover:bg-[#A3E635]/10 hover:text-[#A3E635] border-2 border-[#FFFFFF] text-[#FFFFFF] transition-all duration-300 hover:scale-110 group p-3 rounded-xl"
+                >
+                  <Instagram className="w-5 h-5 group-hover:animate-pulse" />
+                </Button>
+              </a>
             </div>
           </div>
 

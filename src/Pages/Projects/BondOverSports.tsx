@@ -2,12 +2,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
- 
   ChevronLeft,
   ChevronRight,
   X,
   ExternalLink,
-  
   Image as ImageIcon,
   ArrowLeft,
 } from "lucide-react";
@@ -146,9 +144,6 @@ const ImageModal = ({
   );
 };
 
-
-
-
 // Live Links Component
 
 const BondOverSports = () => {
@@ -157,11 +152,9 @@ const BondOverSports = () => {
 
   const project = {
     title: "Bond Over Sports (BOS)",
-    subtitle: "Government-Recognized Sports Platform",
-    description:
-      "Government-recognized platform officially registered under FIT India initiative and acknowledged by NITI Aayog. This project demonstrates the ability to work on large-scale, government-approved applications.",
+
     longDescription:
-      "Bond Over Sports is a comprehensive sports management platform that has received official recognition from the Indian government. The platform serves multiple user roles and provides tools for event management, user verification, and sports community building.",
+      "Bond Over Sports is a comprehensive sports management platform I build innovative digital platforms that connect communities through heritage sports and culture, combining frontend development and API integration with user-focused design to inspire participation and collaboration.",
     tech: [
       "React.js",
       "TypeScript",
@@ -175,17 +168,17 @@ const BondOverSports = () => {
       "Versatile User Roles – Five roles with customized access and workflows",
       "Real-time Event Management – Live listings, filtering, maps, and easy registration",
       "Sponsorship Portal – Sponsor onboarding, partnerships, and brand visibility.",
-      "Modern UX – Responsive design, secure forms with OTP, and intuitive notifications",
+
       "Robust Tech Stack – React, TypeScript, Tailwind, with strong security and performance",
     ],
     challenges: [
-      "Real-time data integration and event updates required dynamic, up-to-date listings",
+      "Real-time data integration and event updates required dynamic",
       "Secure user onboarding and verification to ensure genuine participation and data protection",
       "Responsive design required seamless access across mobile, tablet, desktop, and large screens.",
     ],
     solutions: [
       "Developed the UI using a mobile-first Tailwind CSS approach with responsive layouts and media queries.",
-      "Used OTP authentication, strict validation, HTTPS encryption, and frontend optimizations like code splitting and lazy loading",
+      "frontend optimizations like code splitting and lazy loading",
     ],
     github: "https://github.com/sakshiichauhan/Bos",
     demo: "https://bos-topaz.vercel.app",
@@ -231,9 +224,7 @@ const BondOverSports = () => {
           <h1 className="text-5xl lg:text-6xl font-bold mb-4  bg-gradient-to-r from-white to-[#A3E635] bg-clip-text text-transparent">
             {project.title}
           </h1>
-          <p className="text-xl text-[#A3E635] mb-6 font-semibold">
-            {project.subtitle}
-          </p>
+
           <p className="text-lg text-white/80 max-w-4xl mx-auto leading-relaxed">
             {project.longDescription}
           </p>

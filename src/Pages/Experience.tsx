@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Building2, Calendar, MapPin, TrendingUp, Users, Zap, Code, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
-
+import bgImage from "@/assets/bg.jpg";
 const ExperienceSection = () => {
   const achievements = [
     "Built 5+ high-impact websites with interactive Framer animations, driving user engagement",
@@ -20,7 +20,16 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section className="pt-35 pb-20 bg-[#212020] relative overflow-hidden">
+    <section 
+      className="pt-35 pb-20 relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}
+    > <div className="absolute inset-0 bg-[#212020]/80"></div>
       {/* Background decorative elements */}
       <motion.div 
         className="absolute inset-0 opacity-10"
