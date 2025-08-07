@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, Mail, MapPin, Phone, Instagram, Download, ArrowRight } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Instagram, Box, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import profileImage from "@/assets/Sakshi.jpg";
@@ -97,8 +97,8 @@ const HeroSection = () => {
                   size="lg"
                   className="border-2 border-[#A3E635]/30 text-white hover:bg-[#A3E635]/10 hover:border-[#A3E635] transition-all duration-300 backdrop-blur-sm hover:scale-105 group font-semibold px-8 py-3 rounded-xl"
                 >
-                  <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
-                  Download CV
+                  < Box className="w-4 h-4 mr-2 group-hover:animate-bounce" />
+                  Explore Portfolio
                 </Button>
               </a>
             </div>
